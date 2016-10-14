@@ -7,7 +7,7 @@ function refuelMax()
     repeat
         refuelAmount = maxFuel - turtle.getFuelLevel()
         if(turtle.refuel(1)) then
-            refuelPerItem = maxFuel - turtle.getFuelLevel() - refuelAmount
+            refuelPerItem = refuelAmount - (maxFuel - turtle.getFuelLevel())
             refuelAmount = refuelAmount - refuelPerItem
             turtle.refuel(math.min(math.ceil(refuelAmount / refuelPerItem), turtle.getItemCount()))
         end
