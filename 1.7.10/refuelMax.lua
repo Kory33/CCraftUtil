@@ -8,6 +8,7 @@ end
 function refuelMax()
     initSlot = turtle.getSelectedSlot()
     for slot = 1, 16 do
+        turtle.select(slot)
         refuelAmount = getFuelFillAmount()
         if(turtle.refuel(1)) then
             refuelPerItem = refuelAmount - getFuelFillAmount()
