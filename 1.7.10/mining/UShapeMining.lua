@@ -1,0 +1,15 @@
+-----------------------------------------------------------------
+-- @author Kory33                                              --
+--                                                             --
+-- Script for the U-Shaped branch minings.                     --
+--                                                             --
+-- Starting from "*", the turtle follows the path of           --
+-- *======================                                     --
+--                       |  }                                  --
+--                       |  } 3m                               --
+--                       |  }                                  --
+-- *======================                                     --
+-- While placing the torches in an appropriate places.         --
+-----------------------------------------------------------------
+
+-- TODO
