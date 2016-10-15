@@ -28,7 +28,7 @@ function mineL3WH(...)
     end
     local isDirUp = height > 0 
     width = math.floor(width)
-    height= math.floor(abs(height) - 1)
+    height= math.floor(math.abs(height) - 1)
 
     local isDirUp = true
     for w = 1, width do
