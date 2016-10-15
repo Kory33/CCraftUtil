@@ -34,7 +34,7 @@ function mineL3WH(...)
     for w = 1, width do
         turtle.dig()
         turtle.forward()
-        turtle.mineLR()
+        mineLR()
 
         for h = 1, height do
             if isDirUp then
