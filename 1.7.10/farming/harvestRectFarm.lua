@@ -51,7 +51,7 @@ function harvestIfDetectedDown()
         turtle.digDown()
     end
     -- attempt to replant
-    return turtle.placeAny("Down")
+    return placeAny("Down")
 end
 
 
