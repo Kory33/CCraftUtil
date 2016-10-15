@@ -17,7 +17,7 @@ end
 
 
 function mineL3WH(...)
-    local cmdArgs = {...}
+    local args = {...}
     if #args ~= 2 then
         error("usage:\nmineL3WH <Width> <Height>")
     end
