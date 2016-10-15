@@ -17,7 +17,8 @@ function dropAllItems(sDirUD)
 end
 
 
-function breakIfDetected(sDirUD)
+function harvestIfDetected(sDirUD)
+    local initSlot
     if sDirUD == "Up" or sDirUD == "Down" then
         if turtle["detect" .. sDirUD]() then
             return turtle["dig" .. sDirUD]()
@@ -37,7 +38,7 @@ function harvestRectFarm()
     -- measure the width(near-far) of the farm 
     local width = 0
     repeat
-        breakIfDetected("Down")
+        harvestIfDetected("Down")
         width = width + 1
     until not turtle.forward()
     turtle.turnRight()
@@ -45,7 +46,7 @@ function harvestRectFarm()
     -- measure the length(left-right) of the farm
     local length = 0
     repeat
-        breakIfDetected("Down")
+        harvestIfDetected("Down")
         length = length + 1
     until not turtle.forward()
     turtle.turnRight()
@@ -54,13 +55,13 @@ function harvestRectFarm()
     local isFacingFar = false
     if width > 1 then
         turtle.forward()
-        breakIfDetected("Down")
+        harvestIfDetected("Down")
     end
 
     for i = 1, length - 1 do
         for j = 1, width - 2 do
             turtle.forward()
-            breakIfDetected("Down")
+            harvestIfDetected("Down")
         end
 
         -- move to the next row
@@ -72,6 +73,7 @@ function harvestRectFarm()
             end
             if j == 1 then 
                 turtle.forward()
+                harvestIfDetected("Down")
             end
         end
 
