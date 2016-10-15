@@ -21,11 +21,14 @@ function mineL3WH(...)
     if #args ~= 2 then
         error("usage:\nmineL3WH <Width> <Height>")
     end
-    local width = math.floor(tonumber(args[0]))
-    local height= math.floor(math.abs(tonumber(args[1]))) - 1
+    local width = tonumber(args[1])
+    local height= tonumber(args[2])
     if width == nil or height == nil then
         error("Invalid argument data")
     end
+    local isDirUp = height > 0 
+    width = math.floor(width)
+    height= math.floor(abs(height) - 1)
 
     local isDirUp = true
     for w = 1, width do
