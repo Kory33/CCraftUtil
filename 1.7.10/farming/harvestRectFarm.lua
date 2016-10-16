@@ -23,7 +23,8 @@ end
 
 -- attempt to place any item from the inventory
 -- into the front, or if specified by sDirUD<"Up"|"Down">, into that direction
-function placeAny(sDirUD)
+-- refreshSlot is a boolean value which revert the selected slot if true
+function placeAny(sDirUD, refreshSlot)
     local initSlot = turtle.getSelectedSlot()
     local placed = false
     for slot = 1, 16 do
@@ -39,7 +40,9 @@ function placeAny(sDirUD)
             break
         end
     end
-    turtle.select(initSlot)
+    if refreshSlot then
+        turtle.select(initSlot)
+    end
     return placed
 end
 
@@ -51,7 +54,7 @@ function harvestIfDetectedDown()
         turtle.digDown()
     end
     -- attempt to replant
-    return placeAny("Down")
+    return placeAny("Down", false)
 end
 
 
@@ -122,5 +125,5 @@ while true do
     turtle.back()
     turtle.down()
     dropAllItems("Down")
-    sleep(2400)
+    sleep(1200)
 end
