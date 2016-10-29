@@ -9,10 +9,9 @@
 --
 -- CAPIM_DIR and CAPIM_PKG_REMOTELOC
 -- may be declared and defined before this script is loaded if necessary
-local CAPIM_DIR = (CAPIM_DIR == nil) and "/lib/capim" or CAPIM_DIR
-local CAPIM_PKG_REMOTELOC = (CAPIM_PKG_REMOTELOC == nil)
-                            and "https://github.com/Kory33/CCraftUtil/master/CCraftAPIManager/api_pkg"
-                            or CAPIM_PKG_REMOTELOC
+local CAPIM_DIR = CAPIM_DIR or "/lib/capim"
+local CAPIM_PKG_REMOTELOC = CAPIM_PKG_REMOTELOC or
+                            "https://github.com/Kory33/CCraftUtil/master/CCraftAPIManager/api_pkg"
 
 local CAPIM_PKG_LIST_FILE = CAPIM_DIR .. "/core/api_pkg"
 local CAPIM_REPO_DIR = CAPIM_DIR .. "/repos"
